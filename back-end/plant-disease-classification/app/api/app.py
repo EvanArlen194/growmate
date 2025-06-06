@@ -8,9 +8,9 @@ Enhanced with plant/leaf detection to validate that uploaded images contain plan
 
 import os
 import io
+import requests
 import traceback
 import logging
-from typing import List, Tuple, Dict, Any, Optional
 import mimetypes
 import imghdr
 import cv2
@@ -26,6 +26,7 @@ from fastapi.encoders import jsonable_encoder
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from typing import List, Tuple, Dict, Any, Optional
 
 logging.basicConfig(
     level=logging.INFO,
@@ -520,47 +521,75 @@ class PredictionService:
     @staticmethod
     def predict(img_array: np.ndarray, method_idx: int) -> Dict[str, Any]:
         """
-        Make a prediction using the model.
-        
+        Make a prediction using the model and fetch suggestion from external API.
+
         Args:
             img_array: Preprocessed image array
             method_idx: Index of preprocessing method used
-            
+
         Returns:
-            Dictionary with prediction results
-            
+            Dictionary with prediction results and external API response
+
         Raises:
-            ValueError: If prediction fails
+            ValueError: If prediction fails or API request fails
         """
         loaded_model = ModelService.load_model()
         if loaded_model is None:
             raise ValueError("Model failed to load")
-        
+
         try:
             logger.info(f"Making prediction with method #{method_idx+1}, shape: {img_array.shape}")
-            
+
             preds = loaded_model.predict(img_array)
             pred_idx = np.argmax(preds[0])
-            
+
             raw_class = CLASS_NAMES[pred_idx] if pred_idx < len(CLASS_NAMES) else str(pred_idx)
             formatted_class = PredictionService.format_class_name(raw_class)
-            
+            formatted_class_english = PredictionService.format_class_name_english(raw_class)
+
             confidence = float(np.max(preds[0]))
             confidence_percentage = f"{confidence * 100:.2f}%"
-            
+
             logger.info(f"Prediction successful with method #{method_idx+1}")
-            
+
+            prompt_text = f"Give me brief suggestion for handle {formatted_class_english}"
+            api_payload = {
+                "prompt": prompt_text,
+                "max_new_tokens": 100,
+                "temperature": 0.1,
+                "do_sample": False
+            }
+
+            response = requests.post(
+                "https://phi-finetuned-api.evanarlen.my.id/api/v1/inference",
+                headers={
+                    "accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                json=api_payload,
+                timeout=120
+            )
+
+            if response.status_code != 200:
+                logger.warning(f"API request failed: {response.status_code} - {response.text}")
+                suggestion = "Tidak ada saran yang tersedia (API error)"
+            else:
+                api_result = response.json()
+                suggestion = api_result.get("response", "Tidak ada saran yang diberikan")
+
             return {
-                "prediction": formatted_class, 
+                "prediction": formatted_class,
                 "raw_class": raw_class,
                 "confidence": confidence_percentage,
-                "preprocessing_method": method_idx+1,
-                "prediction_english": PredictionService.format_class_name_english(raw_class)
+                "preprocessing_method": method_idx + 1,
+                "prediction_english": PredictionService.format_class_name_english(raw_class),
+                "suggestion": suggestion
             }
+
         except Exception as e:
             logger.error(f"Error making prediction: {str(e)}")
             raise ValueError(f"Error making prediction: {str(e)}")
-
+    
 @app.on_event("startup")
 async def startup_event():
     """Initialize model when application starts"""

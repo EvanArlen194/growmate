@@ -957,7 +957,7 @@ ul.parameter-list {
 }
 
 .loader {
-  animation: rotation .6s linear infinite;
+  animation: rotation 1s linear infinite;
 }
 
 /* Footer */

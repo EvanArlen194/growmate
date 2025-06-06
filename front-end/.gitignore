@@ -1,0 +1,9 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+npm-debug.log
+yarn-error.log

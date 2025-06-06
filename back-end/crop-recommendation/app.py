@@ -2,8 +2,17 @@ from fastapi import FastAPI, Form
 from fastapi.responses import JSONResponse
 import numpy as np
 from tensorflow.keras.models import load_model
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Mengizinkan semua domain
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load model
 try:

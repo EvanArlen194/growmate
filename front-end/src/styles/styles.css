@@ -186,11 +186,11 @@ header > .navigation > .container > .hamburger-menu > span {
 
 .big-gif-container > .container > .modal-content > .close-content > .close-button > .bi-x {
   font-size: 30px;
-  color: #b7b6b6;
+  color: #e4e4e4;
 }
 
 .big-gif-container > .container > .modal-content > .close-content > .close-button:hover > .bi-x {
-  color: #cac8c8;
+  color: #f9f9f9;
 }
 
 .big-gif-container > .container > .modal-content > .gif-content {
@@ -545,6 +545,7 @@ header > .navigation > .container > .hamburger-menu > span {
 
 .dashboard-content > .tutorial > .container > .gif-container > img {
   width: 100%;
+  /* border: 1px solid red; */
 }
 
 .dashboard-content > .tutorial > .container > .gif-container > .gif-caption,

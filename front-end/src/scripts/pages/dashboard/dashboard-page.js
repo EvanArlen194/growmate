@@ -95,10 +95,7 @@ export default class DashboardPage {
         <div class="container">
           <h2>Cara Menggunakan Aplikasi</h2>
           <div class="gif-container" id="gif-container">
-            <img src="images/gif-1.png">
-            <div class="gif-caption">
-              <p>GIF</p>
-            </div>
+            <img src="images/tutorial.gif" alt="Tutorial GIF">
           </div>
         </div>
       </div>
@@ -111,10 +108,7 @@ export default class DashboardPage {
             </div>
             <div class="gif-content">
               <div class="main-content">
-                <img src="images/gif-1.png">
-                <div class="gif-caption">
-                  <p>GIF</p>
-                </div>
+                <img src="images/tutorial.gif" alt="Tutorial GIF">
               </div>
             </div>
           </div>

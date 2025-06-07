@@ -6,6 +6,7 @@ import numpy as np
 import json
 from PIL import Image, UnidentifiedImageError
 import io
+import httpx
 
 # Inisialisasi aplikasi FastAPI
 app = FastAPI()
@@ -30,12 +31,27 @@ model = load_model(MODEL_PATH)
 with open(LABELS_PATH, 'r') as f:
     class_labels = json.load(f)
 
+class_name_mapping = {
+    "Semut": "Ant",
+    "Lebah": "Bee",
+    "Kumbang": "Beetle",
+    "Ulat": "Caterpillar",
+    "Cacing tanah": "Earthworm",
+    "Earwig": "Earwig",
+    "Belalang": "Grasshopper",
+    "Ngengat": "Moth",
+    "Siput": "Snail",
+    "Keong": "Slug",
+    "Tawon": "Wasp",
+    "Kutu Beras": "Rice Weevil"
+}
+
 # Endpoint untuk melakukan prediksi gambar
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     """
     Menerima file gambar, melakukan praproses, 
-    lalu mengembalikan hasil klasifikasi.
+    lalu mengembalikan hasil klasifikasi dan saran penanganan hama.
     """
     if not file.filename:
         raise HTTPException(status_code=400, detail="Empty file name")
@@ -66,13 +82,34 @@ async def predict(file: UploadFile = File(...)):
             raise HTTPException(status_code=400, detail="Gambar yang diunggah tampaknya tidak menunjukkan keberadaan hama tanaman seperti serangga. Sistem tidak dapat melakukan identifikasi hama berdasarkan gambar ini.")
 
         class_index = int(np.argmax(prediction))
-        class_name = class_labels[class_index]
+        class_name_id = class_labels[class_index]
+        class_name_en = class_name_mapping.get(class_name_id, class_name_id)
 
-        # Kembalikan hasil prediksi
+        prompt = f"Give me suggestion for handling {class_name_en} pest"
+
+        async with httpx.AsyncClient(timeout=120) as client:
+            response = await client.post(
+                "https://phi-finetuned-api.evanarlen.my.id/api/v1/inference",
+                json={
+                    "prompt": prompt,
+                    "max_new_tokens": 100,
+                    "temperature": 0.1,
+                    "do_sample": False
+                },
+                headers={"Content-Type": "application/json"}
+            )
+
+        if response.status_code != 200:
+            raise HTTPException(status_code=500, detail="Gagal mendapatkan saran dari API eksternal.")
+
+        response_data = response.json()
+        suggestion = response_data.get("response", "Tidak ada saran yang tersedia.")
+
         return {
             "data": {
-            "prediction": class_name,
-            "confidence": f"{confidence_percent}%"
+                "prediction": class_name_id,
+                "confidence": f"{confidence_percent}%",
+                "suggestion": suggestion
             }
         }
 

@@ -35,7 +35,7 @@ export default class CropRecommendationPresenter {
         return
       }
 
-      console.log('postCropRecommendation: response:', response);
+      // console.log('postCropRecommendation: response:', response);
       this.#view.setupDecationButton(response);
     } catch (error) {
       this.#view.predictFailed(error.message);

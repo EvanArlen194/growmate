@@ -289,7 +289,7 @@ export default class DiseaseClassificationPage {
     if (outputTitle) outputTitle.textContent = '🔍 Hasil';
     if (outputDesc) outputDesc.innerHTML = `Prediksi:  ${data.prediction} <br> Probabilitas: ${data.confidence}`;
     if (suggestionTitle) suggestionTitle.textContent = '💡 Saran';
-    if (suggestionDesc) suggestionDesc.textContent = data.suggestion || 'Tidak ada saran yang tersedia untuk penyakit ini.';
+    if (suggestionDesc) suggestionDesc.textContent = data.suggestions || 'Tidak ada saran yang tersedia untuk penyakit ini.';
   }
 
   setupDecationButtonFailed(response) {

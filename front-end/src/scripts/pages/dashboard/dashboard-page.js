@@ -1,13 +1,13 @@
 export default class DashboardPage {
   async render() {
     return `<div class="dashboard-content">
-      <div id="carouselExample" class="carousel carousel-dark slide">
+      <div id="carouselExample" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="false">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="2000">
+          <div class="carousel-item active">
             <img src="images/carousel-1.jpg" class="d-block w-100" style="" alt="...">
           </div>
           <div class="carousel-item">
@@ -104,11 +104,11 @@ export default class DashboardPage {
         <div class="container">
           <div class="modal-content">
             <div class="close-content">
-              <div class="close-button" id="close-button"><i class="bi bi-x"></i></div>
+              <div class="close-button" id="close-button"><i class="bi bi-x bi-x-gif"></i></div>
             </div>
             <div class="gif-content">
-              <div class="main-content">
-                <img src="images/tutorial.gif" alt="Tutorial GIF">
+              <div class="main-content gif-main-content">
+                <img src="images/tutorial.gif" alt="Tutorial GIF" class="gif-image">
               </div>
             </div>
           </div>
@@ -121,9 +121,8 @@ export default class DashboardPage {
           <div class="point">
             <p>GrowMate Team</p>
             <p>📬 Email: growmate.help@gmail.com</p>
-            <p>📲 WhatsApp: +62 812-3456-0000</p>
           </div>
-          <p>Butuh bantuan? Klik tombol di atas atau kirim email kapan saja. Kami siap membantu Anda!</p>
+          <p>Butuh bantuan? Silahkan kirim email kapan saja. Kami siap membantu Anda!</p>
         </div>
       </div>
 
@@ -133,6 +132,7 @@ export default class DashboardPage {
   async afterRender() {
     this.enlargeGIF();
     this.closeBigGIF();
+    this.closeGIFWithWindow();
   }
 
   enlargeGIF () {
@@ -149,6 +149,22 @@ export default class DashboardPage {
     closeButton ? closeButton.addEventListener('click', (event) => {
       event.stopPropagation();
       document.querySelector('#big-gif-container').classList.remove('active');
+    }) : null;
+  }
+
+  closeGIFWithWindow() {
+    window ? window.addEventListener('click', (event) => {
+      if (
+        !event.target.classList.contains('gif-main-content') && 
+        !event.target.classList.contains('gif-image') && 
+        !event.target.classList.contains('close-button') && 
+        !event.target.classList.contains('bi-x-gif')
+      ) {
+        event.stopPropagation();
+
+        const bigGifContainer =  document.querySelector('#big-gif-container');
+        bigGifContainer ? bigGifContainer.classList.remove('active') : null;
+      }
     }) : null;
   }
 }

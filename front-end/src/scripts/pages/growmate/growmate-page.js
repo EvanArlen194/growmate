@@ -37,7 +37,7 @@ export default class GrowmatePage {
           </section>
           <section>
             <h3>Teknologi di Balik GrowMate</h3>
-            <p>GrowMate menggunakan teknologi Computer Vision dan Machine Learning untuk mengidentifikasi hama dan penyakit tanaman secara akurat dari gambar yang diunggah pengguna. Kami terus melatih model kecerdasan buatan kami agar lebih cerdas seiring waktu berdasarkan data riil dari pengguna di lapangan.</p>
+            <p>GrowMate menggunakan teknologi Computer Vision dan Machine Learning untuk mengidentifikasi hama dan penyakit tanaman secara akurat dari gambar yang diunggah pengguna. Selain itu, GrowMate juga memberikan rekomendasi tanaman yang sesuai berdasarkan data tanah dan cuaca menggunakan predictive analytics Machine Learning. Kami terus melatih model kecerdasan buatan kami agar lebih cerdas seiring waktu berdasarkan data riil dari pengguna di lapangan.</p>
           </section>
           <section>
             <h3>Tim Pengembang</h3>

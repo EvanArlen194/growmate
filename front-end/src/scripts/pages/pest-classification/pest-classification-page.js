@@ -19,7 +19,7 @@ export default class PestClassificationPage {
 
         <div class="container">
           <div class="description">
-            <p>Pengguna dapat mengidentifikasi jenis hama yang menyerang tanaman hanya dengan mengunggah gambar bagian tanaman yang terdampak. Sistem akan secara otomatis menganalisis citra tersebut menggunakan teknologi AI, lalu menampilkan jenis hama, ciri-ciri umum serangan, serta saran penanganan yang dapat segera dilakukan untuk mencegah kerusakan lebih lanjut.</p>
+            <p>Pengguna dapat mengidentifikasi jenis hama yang menyerang tanaman hanya dengan mengunggah gambar hama yang menyerang tanaman. Sistem akan secara otomatis menganalisis citra tersebut menggunakan teknologi kecerdasan buatan, lalu menampilkan jenis hama serta saran penanganan yang dapat segera dilakukan untuk mencegah kerusakan lebih lanjut.</p>
           </div>
 
           <div class="recomendation">
@@ -29,20 +29,20 @@ export default class PestClassificationPage {
             </div>
             <div class="bottom-content main-recommendation-content">
               <div class="item">
-                <p class="title">🌱 Daftar Penyakit yang Bisa Dideteksi</p>
-                <p>Tampilkan jenis-jenis penyakit tanaman umum yang bisa dikenali oleh sistem.</p>
+                <p class="title">🪲 Daftar Hama yang Bisa Dideteksi</p>
+                <p>Sistem ini dapat mengenali berbagai jenis hama yang umum menyerang tanaman, seperti Semut, Lebah, Kumbang, Ulat, dan Belalang. Selain itu, hama seperti Cacing tanah, Earwig, Ngengat, Siput Tanpa Cangkang, Siput Bercangkang, Tawon, hingga Kutu Beras juga dapat terdeteksi. Setiap hama memiliki karakteristik dan dampak yang berbeda terhadap tanaman, sehingga identifikasi yang tepat sangat penting untuk penanganan yang efektif.</p>
               </div>
               <div class="item">
                 <p class="title">🤖 Keunggulan Teknologi yang Digunakan</p>
-                <p>Didukung oleh model AI yang telah dilatih dengan ribuan gambar penyakit tanaman untuk akurasi deteksi yang tinggi.</p>
+                <p>Didukung oleh model machine learning yang telah dilatih dengan ribuan gambar hama tanaman untuk memastikan akurasi deteksi yang tinggi dalam mengenali berbagai jenis hama secara otomatis.</p>
               </div>
               <div class="item">
                 <p class="title">📸 Tips Foto yang Efektif untuk Deteksi</p>
                 <ul>
                   <li>Ambil foto dengan pencahayaan yang baik.</li>
-                  <li>Pastikan daun atau bagian tanaman terlihat jelas.</li>
+                  <li>Pastikan hama terlihat jelas di dalam gambar.</li>
                   <li>Hindari foto yang terlalu jauh atau terlalu dekat.</li>
-                  <li>Usahakan untuk tidak ada objek lain yang menghalangi bagian tanaman yang ingin dideteksi.</li>
+                  <li>Usahakan tidak ada objek lain yang menghalangi hama yang ingin dideteksi.</li>
                 </ul>
               </div>
               <div class="item">

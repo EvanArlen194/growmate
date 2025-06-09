@@ -1,7 +1,7 @@
 export default class DashboardPage {
   async render() {
     return `<div class="dashboard-content">
-      <div id="carouselExample" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="false">
+      <div id="carouselExample" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -24,7 +24,7 @@ export default class DashboardPage {
 
       <div class="container">
         <div class="description">
-          <p>GrowMate adalah aplikasi berbasis AI yang membantu petani meningkatkan produktivitas dengan memberikan rekomendasi tanaman, deteksi hama, dan identifikasi penyakit secara cerdas.</p>
+          <p>GrowMate adalah aplikasi berbasis kecerdasan buatan yang membantu petani meningkatkan produktivitas dengan memberikan rekomendasi tanaman, deteksi hama, dan identifikasi penyakit secara cerdas.</p>
         </div>
 
         <div class="main-feature">
@@ -69,7 +69,7 @@ export default class DashboardPage {
         <div class="benefit">
           <h2>Manfaat Menggunakan GrowMate</h2>
           <div class="point">
-            <p class="title">🧠 Rekomendasi Cerdas Berbasis AI</p>
+            <p class="title">🧠 Rekomendasi Cerdas Berbasis Kecerdasan Buatan</p>
             <p>GrowMate memberikan rekomendasi tanaman yang paling cocok berdasarkan kondisi tanah dan cuaca secara otomatis, tanpa perlu analisa manual.</p>
           </div>
           <div class="point">

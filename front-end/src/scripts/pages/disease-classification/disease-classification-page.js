@@ -13,12 +13,12 @@ export default class DiseaseClassificationPage {
     return `
       <div class="main-feature-content">
         <div class="jumbotron">
-          <img src="images/disease-classification-1.jpg" alt="">
+          <img src="images/disease-classification.jpg" alt="">
           <h1 class="title">Deteksi Penyakit <span>Tanaman</span></h1>
         </div>
         <div class="container">
           <div class="description">
-            <p>Pengguna dapat mengidentifikasi penyakit yang menyerang tanaman hanya dengan mengunggah foto daun atau bagian tanaman yang tampak terinfeksi. Sistem berbasis AI akan secara otomatis menganalisis gambar dan menampilkan hasil klasifikasi, lengkap dengan nama penyakit, gejala umum, serta saran penanganan awal yang dapat segera dilakukan oleh petani.</p>
+            <p>Pengguna dapat mengidentifikasi penyakit yang menyerang tanaman hanya dengan mengunggah foto daun atau bagian tanaman yang tampak terinfeksi. Sistem berbasis kecerdasan buatan akan secara otomatis menganalisis gambar dan menampilkan hasil klasifikasi, lengkap dengan nama penyakit, gejala umum, serta saran penanganan awal yang dapat segera dilakukan oleh petani.</p>
           </div>
 
           <div class="recomendation">
@@ -29,11 +29,11 @@ export default class DiseaseClassificationPage {
             <div class="bottom-content main-recommendation-content">
               <div class="item">
                 <p class="title">🌱 Daftar Penyakit yang Bisa Dideteksi</p>
-                <p>Tampilkan jenis-jenis penyakit tanaman umum yang bisa dikenali oleh sistem.</p>
+                <p>Sistem ini dapat mendeteksi berbagai penyakit tanaman seperti Kudis Apel, Busuk Hitam, dan Karat Cedar pada Apel, serta Embun Tepung pada Ceri. Pada tanaman Jagung, sistem mengenali Bercak Daun Cercospora, Karat Biasa, dan Hawar Daun Utara. Penyakit lainnya yang dapat dikenali mencakup Busuk Hitam, Esca, dan Hawar Daun pada Anggur, Huanglongbing pada Jeruk, serta Bercak Bakteri pada Persik dan Paprika. Untuk tanaman Kentang dan Tomat, sistem mendeteksi berbagai jenis Hawar, Bercak, Jamur, hingga virus seperti Virus Keriting Daun Kuning dan Virus Mosaik Tomat. Penyakit seperti Gosong Daun, Embun Tepung, dan Bercak Target juga termasuk dalam daftar yang dapat dikenali.</p>
               </div>
               <div class="item">
                 <p class="title">🤖 Keunggulan Teknologi yang Digunakan</p>
-                <p>Didukung oleh model AI yang telah dilatih dengan ribuan gambar penyakit tanaman untuk akurasi deteksi yang tinggi.</p>
+                <p>Didukung oleh model machine learning yang telah dilatih dengan ribuan gambar penyakit tanaman untuk akurasi deteksi yang tinggi.</p>
               </div>
               <div class="item">
                 <p class="title">📸 Tips Foto yang Efektif untuk Deteksi</p>

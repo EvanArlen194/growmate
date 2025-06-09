@@ -3,7 +3,7 @@ import CONFIG from '../config.js';
 const ENDPOINTS = {
   PEST_PREDICT: `${CONFIG.PEST_BASE_URL}/predict`,
   DISEASE_PREDICT: `${CONFIG.DISEASE_BASE_URL}/predict-disease`,
-  PLANT_RECOMMENDATION: `${CONFIG.CROP_BASE_URL}/predict/recom`
+  PLANT_RECOMMENDATION: `${CONFIG.RECOM_BASE_URL}/predict/recom`
 };
 
 export async function getData() {

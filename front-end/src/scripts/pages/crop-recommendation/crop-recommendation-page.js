@@ -8,13 +8,13 @@ export default class CropRecommendationPage {
     return `
       <div class="main-feature-content">
         <div class="jumbotron">
-          <img src="images/crop-recommendation.jpeg" alt="">
+          <img src="images/crop-recommendation.jpg" alt="">
           <h1 class="title">Rekomendasi <span>Tanaman</span></h1>
         </div>
         
         <div class="container">
           <div class="description">
-            <p>Pengguna dapat memperoleh rekomendasi tanaman yang paling sesuai untuk ditanam dengan memasukkan informasi kondisi tanah dan cuaca di sekitarnya. Sistem berbasis AI akan menganalisis data tersebut dan menampilkan daftar tanaman yang direkomendasikan, lengkap dengan tingkat kecocokan, kebutuhan dasar, serta tips awal untuk memulai penanaman secara efektif.</p>
+            <p>Pengguna dapat memperoleh rekomendasi tanaman yang paling sesuai untuk ditanam dengan memasukkan informasi kondisi tanah dan cuaca di sekitarnya. Sistem berbasis kecerdasan buatan akan menganalisis data tersebut dan menampilkan daftar tanaman yang direkomendasikan, lengkap dengan tingkat kecocokan, kebutuhan dasar, serta tips awal untuk memulai penanaman secara efektif.</p>
           </div>
 
           <div class="recomendation">

@@ -3,6 +3,7 @@ import '../styles/styles.css'
 
 import App from './pages/app.js';
 import Camera from './utils/camera.js';
+import { registerServiceWorker } from './utils/index.js';
 
 // DOM
 document.addEventListener('DOMContentLoaded', async () => {
@@ -16,6 +17,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   await app.renderPage();
+
+  await registerServiceWorker();
 
   window.addEventListener('hashchange', async () => {
     await app.renderPage();

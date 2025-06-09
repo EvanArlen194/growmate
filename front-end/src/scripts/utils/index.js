@@ -93,3 +93,21 @@ export function transitionHelper({ skipTransition = false, updateDOM }) {
 
   return document.startViewTransition(updateDOM);
 }
+
+export function isServiceWorkerAvailable() {
+  return 'serviceWorker' in navigator;
+}
+
+export async function registerServiceWorker() {
+  if (!isServiceWorkerAvailable()) {
+    console.log('Service Worker is not supported in this browser.');
+    return;
+  }
+
+  try {
+    const registration = await navigator.serviceWorker.register('/sw.bundle.js');
+    console.log('Service worker registered successfully', registration);
+  } catch (error) {
+    console.error('Failed to register service worker:', error);
+  }
+}

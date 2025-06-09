@@ -1,0 +1,87 @@
+{
+  "id": "/#/",
+  "start_url": "/#/",
+  "scope": "/",
+  "name": "GrowMate App",
+  "short_name": "GrowMate",
+  "description": "GrowMate adalah aplikasi berbasis kecerdasan buatan yang membantu petani meningkatkan produktivitas dengan memberikan rekomendasi tanaman, deteksi hama, dan identifikasi penyakit secara cerdas.",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "images/icons/icon.png",
+      "type": "image/png",
+      "sizes": "500x500",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icons/icon_x48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icons/icon_x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icons/icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icons/icon_x384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screenshots/GrowMate01.png",
+      "sizes": "1866x949",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/GrowMate02.png",
+      "sizes": "1866x949",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/GrowMate03.png",
+      "sizes": "1866x949",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/GrowMate04.png",
+      "sizes": "1866x949",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/GrowMate05.png",
+      "sizes": "459x825",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshots/GrowMate06.png",
+      "sizes": "459x825",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshots/GrowMate07.png",
+      "sizes": "459x825",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

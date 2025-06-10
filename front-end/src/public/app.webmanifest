@@ -7,7 +7,7 @@
   "description": "GrowMate adalah aplikasi berbasis kecerdasan buatan yang membantu petani meningkatkan produktivitas dengan memberikan rekomendasi tanaman, deteksi hama, dan identifikasi penyakit secara cerdas.",
   "display": "standalone",
   "background_color": "#FFFFFF",
-  "theme_color": "#08811C",
+  "theme_color": "#FFFFFF",
   "icons": [
     {
       "src": "images/icons/icon.png",

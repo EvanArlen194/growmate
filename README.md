@@ -1,6 +1,7 @@
-# 🌱 GrowMate: Grow Smart, Harvest Better (CC25-CF134)
+# 🌱 GrowMate: Grow Smart, Harvest Better
 
-**Smart Agricultural Solution powered by AI & Machine Learning**
+**Smart Agricultural Solution powered by AI & Machine Learning**  
+**ID Tim**: **CC25-CF134**
 
 GrowMate adalah platform web cerdas yang dirancang untuk membantu petani dan pecinta tanaman dalam mengelola kesehatan tanaman mereka. Dengan memanfaatkan teknologi **Convolutional Neural Network (CNN)** untuk klasifikasi penyakit dan hama tanaman, serta **Predictive Analytics** untuk rekomendasi tanaman berdasarkan analisis tanah.
 

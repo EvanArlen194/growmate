@@ -1,4 +1,4 @@
-# 🌱 GrowMate: Grow Smart, Harvest Better
+# 🌱 GrowMate: Grow Smart, Harvest Better (CC25-CF134)
 
 **Smart Agricultural Solution powered by AI & Machine Learning**
 

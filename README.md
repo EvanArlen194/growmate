@@ -1,4 +1,4 @@
-# 🌱 GrowMate
+# 🌱 GrowMate: Grow Smart, Harvest Better
 
 **Smart Agricultural Solution powered by AI & Machine Learning**
 
